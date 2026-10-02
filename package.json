@@ -1,19 +1,10 @@
 {
-  "name": "skillbridge-client",
-  "private": true,
-  "version": "2.1.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "cd client && npm install && npm run build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.1",
-    "vite": "^5.4.2"
-  }
+  "buildCommand": "cd client && npm install && npm run build",
+  "outputDirectory": "client/dist",
+  "framework": null,
+  "rewrites": [
+    { "source": "/api/gemini", "destination": "/api/gemini.js" },
+    { "source": "/api/matching/:path*", "destination": "/api/matching.js" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
