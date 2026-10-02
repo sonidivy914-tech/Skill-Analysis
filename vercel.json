@@ -1,5 +1,10 @@
 {
+  "buildCommand": "cd client && npm install && npm run build",
+  "outputDirectory": "client/dist",
+  "framework": null,
   "rewrites": [
-    { "source": "/api/gemini", "destination": "/api/gemini.js" }
+    { "source": "/api/gemini", "destination": "/api/gemini.js" },
+    { "source": "/api/matching/:path*", "destination": "/api/matching.js" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
